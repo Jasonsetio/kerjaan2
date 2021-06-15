@@ -21,6 +21,30 @@ function App() {
       </header>
     </div>
   );
+
+
+interface IData {
+  id: string;
+  name: string;
+  email: string;
 }
 
+interface IAppState {
+  showTable: boolean;
+}
+
+interface IAppProps {
+  data: IData;
+}
+
+class App extends React.Component<IAppProps, IAppState> {
+  public toggleShowTable = () => {
+    const { showTable } = this.state;
+    this.setState({showTable: !showTable});
+    <button onClick={this.toggleShowTable}>test</button>
+  }
+
+}
+}
 export default App;
+
